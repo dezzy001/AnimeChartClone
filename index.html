@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  <script src="main.js"></script>
+  <title>Anime Chart Clone</title>
+</head>
+
+<body>
+  <nav class="nav">
+    <div class="nav__bar">
+      <i class="fas fa-bars"></i>
+    </div>
+    <div class="nav__logo">
+      <a class="nav__logo-link" href="#">LiveChart<span class="secondary-accent">.me</span></a>
+    </div>
+    <ul class="nav__list">
+      <li class="nav__item"><a href="#" class="nav__item__link">Browse <i class="fas fa-caret-down"></i></a></li>
+      <li class="nav__item"><a href="#" class="nav__item__link">Seasons <i class="fas fa-caret-down"></i></a></li>
+      <li class="nav__item"><a href="#" class="nav__item__link">Schedule</a></li>
+      <li class="nav__item"><a href="#" class="nav__item__link">Headlines</a></li>
+      <li class="nav__item"><a href="#" class="nav__item__link">Videos</a></li>
+    </ul>
+    <ul class="nav__user-action">
+      <li class="nav__user-action__item"><a class="nav__user-action__link" href="#"><i class="fas fa-search"></i></a></li>
+      <li class="nav__user-action__item"><a class="nav__user-action__link" href="#"><i class="far fa-bookmark"></i></a></li>
+      <li class="nav__user-action__item">
+        <button class="nav__user-action__button button">Log in</button>
+      </li>
+    </ul>
+  </nav>
+
+  <header class="header">
+    <div class="header-bar">
+      <div class="header-box">
+        <div class="header-box__arrow header-box__arrow--left"><i class="fas fa-chevron-left"></i></div>
+        <div class="header-box__content">
+          <div class="header-box__subheading">October 2020-December 2020</div>
+          <h1 class="header-box__heading">Fall 2020 Anime</h1>
+        </div>
+        <div class="header-box__arrow header-box__arrow--right"><i class="fas fa-chevron-right"></i></div>
+      </div>
+      <ul class="header-tab">
+        <li class="header-tab__item header-tab__item--selected"><a class="header-tab__link" href="#">Television</a></li>
+        <li class="header-tab__item header-tab__item--not-selected"><a class="header-tab__link" href="#">Movies</a></li>
+        <li class="header-tab__item header-tab__item--not-selected"><a class="header-tab__link header-tab__link--not-selected" href="#">OVAs</a></li>
+        <li class="header-tab__item header-tab__item--not-selected"><a class="header-tab__link" href="#">All</a></li>
+        <li class="header-tab__item header-tab__item--not-selected"><a class="header-tab__link" href="#"><i class="fa fa-image"></i></a></li>
+
+      </ul>
+    </div>
+  </header>
+
+  <section class="filter">
+    <label class="filter__label" for="sort-by">Sort By:</label>
+    <div class="filter__dropdown-container">
+      <select class="filter__dropdown" name="anime-stats-filter">
+        <option value="average-user-rating">average user rating</option>
+        <option value="air-date">air date</option>
+        <option value="countdown">countdown</option>
+        <option value="modified">modified</option>
+        <option value="popularity">popularity</option>
+        <option value="title">title</option>
+      </select>
+      <select class="filter__dropdown" name="anime-title-filter">
+        <option value="title-romanji">Romanji Titles</option>
+        <option value="title-english">English Titles</option>
+      </select>
+      <select class="filter__dropdown" name="anime-leftover-filter">
+        <option value="display-leftover">Display Leftovers</option>
+        <option value="hide-leftover">Hide Leftovers</option>
+      </select>
+      <a class="filter__option" href="#">Mark Filter</a>
+    </div>
+
+    <div class="filter__additional-options">
+      <a class="filter__option" href="#">Preferences</a>
+      <form class="filter__additional-item filter__search" action="./">
+        <i class="fa fa-search filter__search-icon"></i>
+        <input class="filter__search-bar" type="text" placeholder="Search this page">
+      </form>
+    </div>
+  </section>
+
+  <main class="main">
+    <div class="anime-card">
+
+      <div class="anime-card__option">
+        <i class="far fa-bookmark"></i>
+      </div>
+
+      <div class="anime-card__status">
+
+      </div>
+
+      <div class="anime-card__header anime-card--border-bottom">
+        <h3 class="anime-card__title">
+          <a class="anime-card__link" href="#">Fire Force Season 2</a>
+        </h3>
+        <div class="anime-card__tag-container">
+          <div class="anime-card__tag"><a href="#">Action</a></div>
+          <div class="anime-card__tag"><a href="#">Shounen</a></div>
+          <div class="anime-card__tag"><a href="#">Supernatural</a></div>
+        </div>
+      </div>
+
+      <div class="anime-card__content">
+        <div class="anime-card__image-container">
+          <img class="anime-card__image" src="https://u.livechart.me/anime/9746/poster_image/eb1eee2e718aa6dba74f32bd28997f63.jpg?style=small&format=jpg" alt="Fire Force Season 2">
+        </div>
+        <div class="anime-card__info anime-card--border-bottom">
+          <div class="anime-card__sub-info anime-card--border-bottom"><a class="anime-card__link" href="#">David Prodution</a></div>
+          <div class="anime-card__sub-info anime-card--border-bottom">Oct 3, 2020 at 1:55am JST</div>
+
+          <div class="anime-card__sub-info anime-card--border-bottom">
+            <div class="anime-card__sub-info-column">Manga</div>
+            <div class="anime-card__sub-info-column">24 eps &times 24 min</div>
+          </div>
+
+          <div class="anime-card__description-container">
+            <p class="anime-card__description">Shinra and Company 8 have figured out the Evangelist’s goal: to gather Adolla Bursts from Shinra and Shou. After learning more about his past from Captain Burns, Shinra becomes more motivated to discover the truth about his mother and save Shou again.</p>
+            </br>
+
+            <p class="anime-card__description">But a mysterious girl known as the “First Pillar” reveals the Evangelist’s master plan to start another Great Cataclysm!</p>
+            </br>
+            <p class="anime-card__description"><i>[Source: <a class="anime-card__link" href="#">Funimation</a>]</i></p>
+          </div>
+        </div>
+      </div>
+      <ul class="anime-card__distributor-icons">
+        <li class="anime-card__icon">Cruncy Roll</li>
+        <li class="anime-card__icon">MAL</li>
+      </ul>
+    </div>
+    
+  </main>
+
+  <footer class="footer">
+    <div class="footer__container">
+
+      <div class="footer__container-left">
+        <div class="footer__link-container">
+          <a class="footer__site-link" href="#">About</a>
+          <a class="footer__site-link" href="#">Preferences</a>
+          <a class="footer__site-link" href="#">Contact</a>
+          <a class="footer__site-link" href="#">Privacy/Cookies</a>
+          <a class="footer__site-link" href="#">Terms</a>
+          <a class="footer__site-link" href="#">FAQ</a>
+        </div>
+        <div class="footer__copyright">
+          <p class="footer__copyright-description">site designed/logo cloned from <a href="https://www.livechart.me/" target="_blank">LiveCharts.me</a>. </br></br> <a class="link-grow" href="https://github.com/dezzy001/AnimeChartClone"><i class="fab fa-github-square" target="_blank"></i>GitHub Repo by Derek.</p></a>
+        </div>
+      </div>
+      <div class="footer__link-container">
+        <a class="footer__site-link" href="#">Twitter</a>
+        <a class="footer__site-link" href="#">Facebook</a>
+        <a class="footer__site-link" href="#">Discord</a>
+      </div>
+    </div>
+
+  </footer>
+</body>
+
+</html>

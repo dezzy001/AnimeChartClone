@@ -1,0 +1,519 @@
+/* Global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  :root {
+    --nav-height: 50px;
+    /*   colors */
+    --primary-color: rgba(10, 10, 10, 1);
+    --primary-color-unfocus: rgba(150, 150, 150, 1);
+    --primiary-color-v2: rgba(120, 120, 120, 1);
+    --primary-color-hover: rgba(0, 0, 0, 0.8);
+    --primary-color-light: rgba(220, 220, 220, 0.5);
+    --secondary-color: #3b97fc;
+    --secondary-color-selected: rgba(2, 74, 153, 1);
+    --secondary-color-hover: #024a99;
+    --primary-background-color: #f5f5f5;
+    --secondary-color-link: #858585;
+    --anime-card-content-height: 250px;
+    --anime-card-width: 450px;
+  }
+  
+  body,
+  html {
+    font-family: helvetica;
+    background-color: var(--primary-background-color);
+  }
+  
+  /* Nav */
+  .nav {
+    display: flex;
+    align-items: center;
+    box-shadow: 0px 0px 5px 0px rgba(20, 20, 20, 0.3);
+    height: var(--nav-height);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+    background-color: white;
+  }
+  
+  .nav__bar {
+    margin: 0 18px;
+    font-size: 12px;
+    color: var(--primary-color);
+  }
+  
+  .nav__bar:hover {
+    cursor: pointer;
+  }
+  
+  .nav__logo {
+  }
+  
+  .nav__logo-link {
+    text-decoration: none;
+    color: inherit;
+    font-size: 18px;
+    font-weight: 700;
+    font-family: "Anton", cursive;
+    letter-spacing: 1.5px;
+  }
+  
+  .nav__logo-link span {
+    font-size: 12px;
+  }
+  
+  .nav__item__link {
+    margin: 0 20px;
+    text-decoration: none;
+    color: inherit;
+    font-size: 11px;
+    font-weight: bold;
+    font-family: "helvetica";
+  }
+  
+  .nav__list {
+    list-style: none;
+    display: flex;
+  }
+  
+  .nav__user-action {
+    list-style: none;
+    display: flex;
+    align-items: center;
+  }
+  
+  .nav__user-action {
+    margin-left: auto;
+  }
+  
+  .nav__user-action__item {
+    margin: 0 7px;
+  }
+  
+  .nav__user-action__link {
+    text-decoration: none;
+    color: inherit;
+    font-size: 12px;
+    padding: 5px 10px;
+  }
+  
+  .nav__user-action__link:hover {
+    color: var(--secondary-color);
+  }
+  
+  /* Header */
+  .header {
+    margin-top: calc(var(--nav-height) + 20px);
+  }
+  
+  .header-bar {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 40px;
+    border-bottom: 1px solid rgba(230, 230, 230, 1);
+  }
+  
+  .header-box {
+    display: flex;
+    align-items: center;
+  }
+  
+  .header-box__arrow {
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-top: 5px;
+    border-radius: 100%;
+    color: var(--secondary-color);
+  }
+  
+  .header-box__arrow:hover {
+    background-color: rgba(220, 220, 220, 0.3);
+    cursor: pointer;
+  }
+  .header-box__arrow--right {
+    padding: 4px 8px 3px 10px;
+  }
+  
+  .header-box__arrow--left {
+    padding: 4px 10px 3px 8px;
+  }
+  
+  .header-box__content {
+    position: relative;
+  }
+  
+  .header-box__subheading {
+    font-size: 12px;
+    color: #767676;
+    line-height: 0.8;
+  }
+  
+  .header-box__heading {
+    font-weight: 400;
+    font-size: 27px;
+    line-height: 1;
+  }
+  
+  .header-tab {
+    height: 100%;
+    display: flex;
+  }
+  
+  .header-tab__item {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    height: 100%;
+    margin: 0 12px;
+    /*  push down 1 px to account for border hover  */
+    margin-top: 1px;
+    border-bottom: 1px solid transparent;
+  }
+  
+  .header-tab__item:hover {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    height: 100%;
+  }
+  
+  .header-tab__link {
+    text-decoration: none;
+    color: var(--primary-color-unfocus);
+    color: inherit;
+    font-size: 15px;
+    font-weight: inherit;
+  }
+  
+  .header-tab__item--not-selected {
+    color: var(--primary-color-unfocus);
+  }
+  
+  .header-tab__item--not-selected:hover {
+    border-bottom: 1px solid var(--primary-color);
+    color: var(--primary-color-hover);
+    cursor: pointer;
+  }
+  
+  .header-tab__item--selected {
+    border-bottom: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    font-weight: bold;
+  }
+  
+  /* Section - Filter */
+  .filter {
+    margin: 15px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  
+  .filter__dropdown-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .filter__label {
+    font-size: 12px;
+  }
+  
+  .filter__dropdown {
+    margin: 0 3px;
+    margin-bottom: 2px;
+    border: 1px solid rgba(220, 220, 220, 1);
+    font-size: 10px;
+    padding: 4px 4px;
+    outline: none;
+    transition: 0.5s;
+  }
+  
+  .filter__dropdown:focus {
+    box-shadow: 0px 1px 5px rgba(100, 100, 100, 0.3);
+    transition: 0.5s;
+  }
+  
+  .filter__option {
+    text-decoration: none;
+    color: var(--secondary-color);
+    font-size: 10px;
+  }
+  
+  .filter__option:hover {
+    color: var(--secondary-color-hover);
+  }
+  
+  .filter__additional-options {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+  }
+  
+  .filter__search {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-left: 30px;
+  }
+  
+  .filter__search-icon {
+    position: absolute;
+    font-size: 10px;
+    color: rgba(150, 150, 150, 1);
+    left: 6px;
+  }
+  
+  .filter__search-bar {
+    max-width: 150px;
+    padding: 2px 5px 2px 20px;
+    border: 1px solid rgba(150, 150, 150, 0.3);
+    box-shadow: inset 0px 1px 2px rgba(100, 100, 100, 0.15);
+  }
+  
+  .filter__search-bar[placeholder] {
+    font-size: 12px;
+    font-family: inherit;
+  }
+  
+  .filter__search-bar:focus {
+    box-shadow: 0px 0px 3px rgba(100, 100, 100, 0.3);
+    outline: none;
+  }
+  
+  /* Main */
+  .main {
+    /*  test heigh to fill in content  */
+    min-height: 70vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin: 2px 15px;
+  }
+  
+  /* Anime Card BEM */
+  
+  .anime-card {
+    max-width: var(--anime-card-width);
+    background-color: white;
+    font-size: 12px;
+    position: relative;
+    box-shadow: 0px 0px 5px rgba(50, 50, 50, 0.15);
+  }
+  
+  .anime-card--border-bottom {
+    border-bottom: 0.5px solid var(--primary-color-light);
+  }
+  
+  .anime-card__option {
+    height: 2em;
+    width: 2em;
+    box-shadow: 0px 0px 5px rgba(10, 10, 10, 0.2);
+    position: absolute;
+    display: flex;
+    border-radius: 100%;
+    align-items: center;
+    justify-content: center;
+    top: 0px;
+    right: 0px;
+    transform: translate(25%, -25%);
+    background-color: inherit;
+  }
+  
+  .anime-card__option:hover {
+    background-color: rgba(230, 230, 230, 1);
+    cursor: pointer;
+  }
+  
+  .anime-card__option .fa-bookmark {
+    font-size: 9px;
+  }
+  
+  .anime-card__section{
+    display: flex: ;
+  }
+  
+  .anime-card__header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .anime-card__title {
+    margin: 0.8em 0;
+  }
+  
+  .anime-card__link {
+    text-decoration: none;
+    color: var(--secondary-color);
+  }
+  
+  .anime-card__link:hover {
+    text-decoration: underline;
+  }
+  
+  .anime-card__tag-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    color: var(--primiary-color-v2);
+    width: 100%;
+  }
+  
+  .anime-card__content {
+    display: flex;
+    height: var(--anime-card-content-height);
+    max-height: var(--anime-card-content-height);
+    flex-direction: row;
+    flex: 1;
+  }
+  
+  .anime-card__image-container {
+  }
+  
+  .anime-card__image {
+    height: 250px;
+    width: 175px;
+  }
+  
+  .anime-card__tag a {
+    color: inherit;
+    text-decoration: none;
+  }
+  
+  .anime-card__tag a:hover {
+    text-decoration: underline;
+    color: var(--secondary-color);
+  }
+  
+  .anime-card__tag:not(:last-child)::after {
+    content: "·";
+    margin: 0 3px;
+  }
+  
+  .anime-card__info{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+  
+  .anime-card__sub-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.15em 0;
+    color: var(--primiary-color-v2);
+  }
+  
+  .anime-card__sub-info-column{
+    margin: 0 auto;
+  }
+  
+  .anime-card__description-container {
+    overflow-y: scroll;
+    line-height: 1.5;
+    padding: 0.5em 0.5em;
+    flex: 1;
+  }
+  
+  .anime-card__distributor-icons{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 5px 0;
+  }
+  
+  .anime-card__icon{
+    list-style: none;
+    padding: 0 2px;
+  
+  }
+  
+  /* footer */
+  .footer {
+    background-color: #212121;
+    width: 100%;
+    color: var(--secondary-color-link);
+    font-size: 12px;
+    padding: 32px 8px;
+  }
+  
+  .footer__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+  }
+  
+  .footer__link-container {
+  }
+  
+  .footer__container-left {
+    display: flex;
+    flex-direction: column;
+    margin-right: 5em;
+  }
+  
+  .footer__site-link {
+    color: inherit;
+    text-decoration: none;
+    padding-right: 20px;
+  }
+  
+  .footer__site-link:hover {
+    color: rgba(200, 200, 200, 1);
+    text-decoration: underline;
+  }
+  
+  .footer__copyright {
+    margin-top: 25px;
+  }
+  
+  .footer__copyright-description {
+    font-size: 10px;
+    color: rgba(220, 220, 220, 0.9);
+  }
+  
+  .footer__copyright-description a {
+    color: inherit;
+    transition: 0.5s;
+  }
+  
+  .footer__copyright-description .fa-github-square {
+    margin-right: 0.5em;
+  }
+  
+  /* Common Style */
+  .button {
+    background-color: white;
+    border: solid 1px var(--secondary-color);
+    color: var(--secondary-color);
+    padding: 8px 12px;
+  }
+  
+  .button:hover,
+  .button:focus {
+    color: var(--secondary-color-selected);
+    border-color: var(--secondary-color-selected);
+    cursor: pointer;
+    outline: none;
+    /* outline none usually seems like a bad idea - poor accesibility */
+  }
+  
+  .secondary-accent {
+    color: var(--secondary-color);
+  }
+  
+  .link-grow:hover {
+    color: inherit;
+    font-size: 1.5em;
+    transition: 0.5s;
+  }
+  
