@@ -7,7 +7,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
   <link rel="stylesheet" href="style.css">
-  <script src="main.js"></script>
+  <script defer src="./main.js"></script>
   <title>Anime Chart Clone</title>
 </head>
 
@@ -88,56 +88,7 @@
   </section>
 
   <main class="main">
-    <div class="anime-card">
 
-      <div class="anime-card__option">
-        <i class="far fa-bookmark"></i>
-      </div>
-
-      <div class="anime-card__status">
-
-      </div>
-
-      <div class="anime-card__header anime-card--border-bottom">
-        <h3 class="anime-card__title">
-          <a class="anime-card__link" href="#">Fire Force Season 2</a>
-        </h3>
-        <div class="anime-card__tag-container">
-          <div class="anime-card__tag"><a href="#">Action</a></div>
-          <div class="anime-card__tag"><a href="#">Shounen</a></div>
-          <div class="anime-card__tag"><a href="#">Supernatural</a></div>
-        </div>
-      </div>
-
-      <div class="anime-card__content">
-        <div class="anime-card__image-container">
-          <img class="anime-card__image" src="https://u.livechart.me/anime/9746/poster_image/eb1eee2e718aa6dba74f32bd28997f63.jpg?style=small&format=jpg" alt="Fire Force Season 2">
-        </div>
-        <div class="anime-card__info anime-card--border-bottom">
-          <div class="anime-card__sub-info anime-card--border-bottom"><a class="anime-card__link" href="#">David Prodution</a></div>
-          <div class="anime-card__sub-info anime-card--border-bottom">Oct 3, 2020 at 1:55am JST</div>
-
-          <div class="anime-card__sub-info anime-card--border-bottom">
-            <div class="anime-card__sub-info-column">Manga</div>
-            <div class="anime-card__sub-info-column">24 eps &times 24 min</div>
-          </div>
-
-          <div class="anime-card__description-container">
-            <p class="anime-card__description">Shinra and Company 8 have figured out the Evangelist’s goal: to gather Adolla Bursts from Shinra and Shou. After learning more about his past from Captain Burns, Shinra becomes more motivated to discover the truth about his mother and save Shou again.</p>
-            </br>
-
-            <p class="anime-card__description">But a mysterious girl known as the “First Pillar” reveals the Evangelist’s master plan to start another Great Cataclysm!</p>
-            </br>
-            <p class="anime-card__description"><i>[Source: <a class="anime-card__link" href="#">Funimation</a>]</i></p>
-          </div>
-        </div>
-      </div>
-      <ul class="anime-card__distributor-icons">
-        <li class="anime-card__icon">Cruncy Roll</li>
-        <li class="anime-card__icon">MAL</li>
-      </ul>
-    </div>
-    
   </main>
 
   <footer class="footer">
@@ -153,7 +104,14 @@
           <a class="footer__site-link" href="#">FAQ</a>
         </div>
         <div class="footer__copyright">
-          <p class="footer__copyright-description">site designed/logo cloned from <a href="https://www.livechart.me/" target="_blank">LiveCharts.me</a>. </br></br> <a class="link-grow" href="https://github.com/dezzy001/AnimeChartClone"><i class="fab fa-github-square" target="_blank"></i>GitHub Repo by Derek.</p></a>
+          <p class="footer__copyright-description">
+            site designed/logo cloned from <a href="https://www.livechart.me/" target="_blank">LiveCharts.me</a>. 
+          </br></br> 
+          <a class="link-grow" href="https://github.com/dezzy001/AnimeChartClone">
+            <i class="fab fa-github-square" target="_blank"></i>GitHub Repo by Derek.</p> 
+          </a>
+        </br>
+          <p class="footer__copyright-description">API <a href="https://jikan.moe/" >Jikan <img width=15px height=15px src="https://jikan.moe/assets/images/logo/jikan.logo.png" alt="API Jikan"></a> </p>
         </div>
       </div>
       <div class="footer__link-container">
@@ -164,6 +122,63 @@
     </div>
 
   </footer>
+
+  <!--  HTML templates -->
+
+  <template id="anime-card-template">
+    <article class="anime">
+      <div class="anime-card">
+
+        <div class="anime-card__option">
+          <i class="far fa-bookmark"></i>
+        </div>
+
+        <div class="anime-card__status">
+
+        </div>
+
+        <div class="anime-card__header anime-card--border-bottom">
+          <h3 class="anime-card__title">
+            <a class="anime-card__link" href="#">ADD TITLE HERE</a>
+          </h3>
+          <div class="anime-card__tag-container">
+            <div class="anime-card__tag"><a href="#">ADD TAG 1 HERE...</a></div>
+            <div class="anime-card__tag"><a href="#">ADD TAG 2 HERE...</a></div>
+          </div>
+        </div>
+
+        <div class="anime-card__content">
+          <div class="anime-card__image-container">
+            <div class="anime-card__next-airtime anime-card__image-info">EP101: 4d 21h 07m 20s</div>
+            <div class="anime-card__rating anime-card__image-info"><i class="fas fa-star"></i> 8.44</div>
+            <img class="anime-card__image" src="https://picsum.photos/200/300" alt="Placeholder Image">
+          </div>
+          <div class="anime-card__info anime-card--border-bottom">
+            <div class="anime-card__sub-info anime-card--border-bottom"><a class="anime-card__link anime-card__studio" href="#">David Prodution</a></div>
+            <div class="anime-card__first-airtime anime-card__sub-info anime-card--border-bottom">Oct 3, 2020 at 1:55am JST</div>
+
+            <div class="anime-card__sub-info anime-card--border-bottom">
+              <div class="anime-card__sub-info-column anime-card__adapted-from">Manga</div>
+              <div class="anime-card__sub-info-column anime-card__episode-info">24 eps &times 24 min</div>
+            </div>
+
+            <div class="anime-card__description-container">
+              <p class="anime-card__description">TEST DESCRIPTION 1</p>
+              </br>
+              <p class="anime-card__description">TEST DESCRIPTION 2</p>
+              </br>
+              <p class="anime-card__description"><i>[Source: <a class="anime-card__description-source anime-card__link" href="#">Funimation</a>]</i></p>
+            </div>
+          </div>
+        </div>
+        <ul class="anime-card__distributor-icons">
+          <li class="anime-card__icon">Cruncy Roll</li>
+          <li class="anime-card__icon">MAL</li>
+        </ul>
+      </div>
+    </article>
+  </template>
+
 </body>
 
 </html>
