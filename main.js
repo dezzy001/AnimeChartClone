@@ -9,7 +9,7 @@ HTML + CSS:
     ✔ Main content
     ❌ watch sidebar status
     ❌ watch time info
-    ❌ scrollbar
+    ✔ scrollbar
   
 Javascript
   ❌ Component for anime cards
@@ -22,7 +22,7 @@ Javascript
 let main = document.querySelector(".main");
 let animeCardTemplate = document.querySelector("#anime-card-template");
 
-const NUMBER_OF_ANIME_CARDS = 20;
+const NUMBER_OF_ANIME_CARDS = 25;
 
 // UNIT TEST
 
@@ -54,7 +54,7 @@ fetch("https://api.jikan.moe/v3/season/2020/fall")
     .then((data) => {
         let animeJson = data.anime;
         for (let i = 0; i < NUMBER_OF_ANIME_CARDS; i++) {
-            console.log(animeJson[i]);
+            // console.log(animeJson[i]);
             let animeCardData = {
                 title: animeJson[i].title,
                 tags: animeJson[i].genres.map((genre) => genre.name),
@@ -105,7 +105,16 @@ function createAnimeCard(animeCardJson) {
     mainImage.setAttribute("alt", `${animeCardJson.title} Image`);
 
     // image info
-    // DEREK TODO - INCLUDE HOVER to display none on image info
+    let nextAirTime = animeCard.querySelector(".anime-card__next-airtime");
+    let rating = animeCard.querySelector(".anime-card__rating");
+    mainImage.addEventListener("mouseenter", (event) => {
+        nextAirTime.classList.add("anime-card__image-info--none");
+        rating.classList.add("anime-card__image-info--none");
+    });
+    mainImage.addEventListener("mouseleave", (event) => {
+        nextAirTime.classList.remove("anime-card__image-info--none");
+        rating.classList.remove("anime-card__image-info--none");
+    });
 
     // Anime Card Info
     let studio = animeCard.querySelector(".anime-card__studio");
